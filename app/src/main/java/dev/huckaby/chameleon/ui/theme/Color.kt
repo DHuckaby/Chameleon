@@ -1,4 +1,4 @@
-package dev.huckaby.camelion.ui.theme
+package dev.huckaby.chameleon.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

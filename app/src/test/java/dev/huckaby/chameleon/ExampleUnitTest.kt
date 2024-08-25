@@ -1,4 +1,4 @@
-package dev.huckaby.camelion
+package dev.huckaby.chameleon
 
 import org.junit.Test
 import org.junit.Assert.*

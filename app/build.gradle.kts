@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.huckaby.camelion"
+    namespace = "dev.huckaby.chameleon"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "dev.huckaby.camelion"
+        applicationId = "dev.huckaby.chameleon"
         minSdk = 30
         targetSdk = 34
         versionCode = 1

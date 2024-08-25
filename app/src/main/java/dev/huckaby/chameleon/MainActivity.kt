@@ -1,4 +1,4 @@
-package dev.huckaby.camelion
+package dev.huckaby.chameleon
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,11 +9,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import dev.huckaby.camelion.databinding.MainBinding
-import dev.huckaby.camelion.ui.theme.CamelionTheme
-import dev.huckaby.camelion.ui.theme.ThemeVariant
-import dev.huckaby.camelion.ui.theme.getThemeVariant
-import dev.huckaby.camelion.ui.theme.setThemeVariant
+import dev.huckaby.chameleon.databinding.MainBinding
+import dev.huckaby.chameleon.ui.theme.CamelionTheme
+import dev.huckaby.chameleon.ui.theme.ThemeVariant
+import dev.huckaby.chameleon.ui.theme.getThemeVariant
+import dev.huckaby.chameleon.ui.theme.setThemeVariant
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
