@@ -27,7 +27,8 @@ class MainActivity : ComponentActivity() {
         setContentView(binding.root)
 
         binding.greetings.text = "Hello Android!"
-        binding.greetings.setOnClickListener {
+        binding.darkModeCheck.isChecked = themeVariant == ThemeVariant.DARK
+        binding.darkModeCheck.setOnCheckedChangeListener { _, _ ->
             if (themeVariant == ThemeVariant.DEFAULT) {
                 setThemeVariant(ThemeVariant.DARK)
             } else {
