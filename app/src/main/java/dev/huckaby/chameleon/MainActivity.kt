@@ -1,70 +1,31 @@
 package dev.huckaby.chameleon
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import dev.huckaby.chameleon.databinding.MainBinding
-import dev.huckaby.chameleon.ui.theme.CamelionTheme
 import dev.huckaby.chameleon.ui.theme.ThemeVariant
 import dev.huckaby.chameleon.ui.theme.getThemeVariant
 import dev.huckaby.chameleon.ui.theme.setThemeVariant
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        val themeVariant = getThemeVariant()
-        when (themeVariant) {
-            ThemeVariant.DEFAULT -> setTheme(R.style.Theme_Camelion_Default)
-            ThemeVariant.DARK -> setTheme(R.style.Theme_Camelion_Dark)
-        }
         super.onCreate(savedInstanceState)
         val binding = MainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.greetings.text = "Hello Android!"
-        binding.darkModeCheck.isChecked = themeVariant == ThemeVariant.DARK
-        binding.darkModeCheck.setOnCheckedChangeListener { _, _ ->
-            if (themeVariant == ThemeVariant.DEFAULT) {
-                setThemeVariant(ThemeVariant.DARK)
+        val themeVariant = getThemeVariant()
+        binding.alternativeIcon.isChecked = themeVariant == ThemeVariant.ALTERNATIVE
+        binding.alternativeIcon.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                setThemeVariant(ThemeVariant.ALTERNATIVE)
             } else {
                 setThemeVariant(ThemeVariant.DEFAULT)
             }
-            recreate()
+            Toast.makeText(
+                this,
+                "Close application and check out your new icon",
+                Toast.LENGTH_SHORT
+            ).show()
         }
-
-        binding.compose.setContent {
-            CamelionTheme(
-                darkTheme = themeVariant == ThemeVariant.DARK
-            ) {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CamelionTheme {
-        Greeting("Android")
     }
 }

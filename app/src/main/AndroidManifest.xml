@@ -21,7 +21,7 @@
         </activity>
 
         <activity-alias
-            android:name=".LauncherDefault"
+            android:name=".AliasDefault"
             android:enabled="true"
             android:exported="true"
             android:targetActivity=".MainActivity">
@@ -32,11 +32,11 @@
         </activity-alias>
 
         <activity-alias
-            android:name=".LauncherDark"
+            android:name=".AliasAlternative"
             android:enabled="false"
             android:exported="true"
-            android:icon="@mipmap/ic_launcher_dark"
-            android:roundIcon="@mipmap/ic_launcher_dark"
+            android:icon="@mipmap/ic_launcher_alternative"
+            android:roundIcon="@mipmap/ic_launcher_alternative"
             android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

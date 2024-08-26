@@ -5,8 +5,8 @@ import android.content.Context
 import android.content.pm.PackageManager
 
 enum class ThemeVariant(val componentName: String) {
-    DEFAULT(".LauncherDefault"),
-    DARK(".LauncherDark")
+    DEFAULT(".AliasDefault"),
+    ALTERNATIVE(".AliasAlternative")
 }
 
 private enum class ComponentState(val flag: Int) {
